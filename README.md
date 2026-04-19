@@ -1,6 +1,6 @@
 # gorexxr
 
-A Rexx module for the Go programming language.
+A Rexx library for the Go.
 
 ### Prerequisites
 None.
