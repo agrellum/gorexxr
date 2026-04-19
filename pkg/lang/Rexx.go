@@ -1,4 +1,4 @@
-// A port of the NetRexx Runtime around 3.0.X to the Go programming language.
+// A port of the NetRexx Runtime 3.0.X to Go.
 //
 // Please read the NetRexx documentation or look at its source code.
 //
