@@ -1,6 +1,6 @@
 # gorexxr
 
-A Rexx library for the Go.
+A Rexx library for Go.
 
 ### Prerequisites
 None.
