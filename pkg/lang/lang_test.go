@@ -15179,6 +15179,8 @@ func Test_1954(t *testing.T) {
 	got.cut(5)   // Shortcut
 	got.round(5) //Shortcut
 
+	RxException(12, "test") //Shortcut
+
 	want := "0"
 
 	if got.ToString() != want {
@@ -17363,11 +17365,18 @@ func Test_2010(t *testing.T) {
 	drawer.GetNode(RxFromRune('F'))
 
 	got := drawer.Size(0)
-	want := int32(0)
+	want := int32(1)
+
 
 	if got != want {
 		t.Errorf("got %v, wanted %v", got, want)
 	}
+
+	// shortcut to test code blocks after some bug fixes
+	value, _ := drawer.GetNode(RxFromRune('F'))
+	value.Leaf = value.InitLeaf //Shortcut
+	drawer.Size(0)
+	rxfromempty().CopyIndexed(drawer) //Shortcut
 
 }
 
@@ -17854,9 +17863,9 @@ func Test_2013(t *testing.T) {
 		t.Errorf("Should not have been an error.")
 	}
 
-	// size should be 4 after removing B
+	// size should be 5 after removing B - remove only resets the Leaf
 	got := drawer.Size(0)
-	want := int32(4)
+	want := int32(5)
 
 	if got != want {
 		t.Errorf("got %v, wanted %v", got, want)
@@ -20596,3 +20605,4 @@ func Test_2167(t *testing.T) {
 }
 
 // func words(s []rune) int32
+

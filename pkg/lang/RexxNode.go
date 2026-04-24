@@ -166,6 +166,7 @@ func (rcvr *Rexx) GetNode(key *Rexx) (*RexxNode, error) {
 		}
 	}
 	node := RxNode(rxfromclone(rcvr))
+	node.Leaf = rcvr
 	rcvr.coll[key] = node
 	return node, nil
 }

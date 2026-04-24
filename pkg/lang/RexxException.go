@@ -20,6 +20,10 @@ var ExceptionType = []string{"ArgumentNullException", "BadArgumentException", "B
 //	8 - NotLogicException
 //	9 - NumberFormatException"
 func RxException(kind int, detail string) error {
+	if kind > 9 {
+		// Prevents Go Panic
+		kind = 1
+	}
 	message := ExceptionType[kind] + " : " + detail
 	return errors.New(message)
 }
